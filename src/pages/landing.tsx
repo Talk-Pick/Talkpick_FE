@@ -30,7 +30,7 @@ const Landing = () => {
        
 
         {/* Main Heading */}
-        <div className="w-[328px] h-[83px] top-[143px] left-8 [font-family:'Pretendard-ExtraBold',Helvetica] font-extrabold text-black text-[25px] text-center tracking-[0] absolute leading-[normal]">
+        <div className="w-[328px] h-[83px] top-[143px] left-8 [font-family:'Pretendard-ExtraBold',Helvetica] font-extrabold text-gray-900 text-[25px] text-center tracking-[0] absolute leading-[normal]">
           어색한 첫 만남,
           <br />
           다들 경험 있죠?

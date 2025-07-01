@@ -1,11 +1,64 @@
+import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/login";
 import Landing from "../pages/landing";
-import { Routes, Route } from "react-router";
+import Main from "../pages/main";
+import MainLayout from "../layout/MainLayout";
+import RandomLayout from "../layout/random/RandomLayout";
+import Random from "../pages/random";
+import RandomCategory from "../pages/random/category";
+import CategoryDetail from "../pages/random/categoryDetail";
+import Done from "../pages/random/done";
+import Result from "../pages/result";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Landing />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/main",
+        index: true,
+        element: <Main />,
+      },
+      {
+        element: <RandomLayout />,
+        children: [
+          {
+            path: "/random",
+            element: <Random />,
+            handle: { title: "대화나가기" },
+          },
+          {
+            path: "/random/:category/:page",
+            element: <RandomCategory />,
+            handle: { title: "대화나가기" },
+          },
+          {
+            path: "/random/:category/:page/:id",
+            element: <CategoryDetail />,
+            handle: { title: "랜덤 대화 주제 코스" },
+          },
+          {
+            path: "/random/:category/done",
+            element: <Done />,
+            handle: { title: "오늘의 톡픽" },
+          },
+        ],
+      },
 
+      {
+        path: "/result",
+        element: <Result />,
+        handle: { title: "결과 확인" },
+      },
+    ],
+  },
+]);
 
-export const routes = (
-<Routes>
-  <Route index element={<Landing />} />
-  <Route path="login" element={<Login />} />
-</Routes>
-)
+export default router;

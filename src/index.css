@@ -1,1 +1,38 @@
 @import "tailwindcss";
+@import "swiper/css";
+
+
+.shadow-card{
+  @apply shadow-lg p-6 w-[350px] h-[340px] flex flex-col justify-between;
+}
+
+.button-hover{
+  @apply hover:bg-black hover:text-white;
+}
+
+@layer theme {
+  :root {
+    --color-primary-purple: #816cff;
+    --color-primary-pink:   #fe97a7;
+    --color-primary-yellow: #fff3b2;
+    --color-primary-green:  #d5f98a;
+    --color-primary-orange: #ff9640;
+    --color-primary-blue:   #d8f5fd;
+
+    --color-sub-purple:  #ddd3ff;
+    --color-sub-pink:    #ffd7d0;
+    --color-accent-yellow: #ddbb27;
+    --color-accent-green:  #7bba45;
+    --color-sub-peach:   #ffd3b0;
+    --color-sub-sky:     #66c5d4;
+
+    --color-gray-100: #f9f9f9;
+    --color-gray-400: #b6b6b6;     
+    
+    --color-gray-900: #111111;     
+    --color-gray-600: #767676;     
+    --color-gray-500: #aeaeae;     
+    
+    
+  }
+}
