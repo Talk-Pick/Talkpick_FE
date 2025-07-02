@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "swiper/css";
-
+@import "swiper/css/pagination";
 
 .shadow-card{
   @apply shadow-lg p-6 w-[350px] h-[340px] flex flex-col justify-between;
@@ -35,4 +35,13 @@
     
     
   }
+}
+
+
+.swiper-pagination-bullet{
+  @apply  bg-gray-400;
+}
+
+.swiper-pagination-bullet-active{
+  @apply bg-gray-900 w-4 rounded-full;
 }

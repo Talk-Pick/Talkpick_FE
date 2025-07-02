@@ -1,5 +1,5 @@
 import React from "react";
-import Badge from "./common/Badge";
+import Badge from "../common/Badge";
 import { useNavigate } from "react-router-dom";
 
 interface TopicCardProps {
@@ -22,7 +22,7 @@ export default function TopicCard({
   return (
     <div className="bg-gray-100 rounded-3xl shadow-lg py-2 px-4 w-[220px] h-[180px] flex flex-col justify-between"
     onClick={() => {
-      navigate(`/topics/${id}`);
+      navigate(`/daily-talk-pick`);
     }}
     >
       <Badge tag={tag} tagColor={tagColor} className="px-2 py-1" />

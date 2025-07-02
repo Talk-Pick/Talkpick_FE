@@ -3,12 +3,13 @@ import Login from "../pages/login";
 import Landing from "../pages/landing";
 import Main from "../pages/main";
 import MainLayout from "../layout/MainLayout";
-import RandomLayout from "../layout/random/RandomLayout";
+import NavLayout from "../layout/NavLayout";
 import Random from "../pages/random";
 import RandomCategory from "../pages/random/category";
 import CategoryDetail from "../pages/random/categoryDetail";
 import Done from "../pages/random/done";
 import Result from "../pages/result";
+import DailyTalkPick from "../pages/dailyTopics";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
         element: <Main />,
       },
       {
-        element: <RandomLayout />,
+        element: <NavLayout />,
         children: [
           {
             path: "/random",
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
             element: <Done />,
             handle: { title: "오늘의 톡픽" },
           },
+          // {
+          //   path: "/daily-talk-pick/:id",
+          //   element: <TopicDetail />,
+          //   handle: { title: "톡픽 상세" },
+          // },
         ],
       },
 
@@ -57,6 +63,10 @@ const router = createBrowserRouter([
         element: <Result />,
         handle: { title: "결과 확인" },
       },
+      {
+        path: "daily-talk-pick",
+        element: <DailyTalkPick />,
+      }
     ],
   },
 ]);

@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import TopicCard from "../widgets/TopicCard";
+import TopicCard from "../widgets/main/TopicCard";
 import logo from "../assets/images/logos/logo_sm.png";
 import bubble_pink from "../assets/images/contents/bubble_pink.png";
 import bubble_main from "../assets/images/contents/bubble_main.png";
