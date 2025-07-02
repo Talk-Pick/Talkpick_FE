@@ -47,12 +47,12 @@ const navItems = [
       </svg>
     ),
     label: "마이 페이지",
-  },
+},
 ];
 
 export default function BottomNavigator() {
   return (
-    <nav className="fixed bottom-0 left-0 w-full bg-white rounded-t-2xl shadow-[0_-2px_8px_0_rgba(0,0,0,0.04)] z-50">
+    <nav className="fixed bottom-0 left-0 w-full bg-white shadow-[0_-2px_8px_0_rgba(0,0,0,0.04)] z-50">
       <div className="flex justify-around items-center h-[70px] max-w-md mx-auto">
         {navItems.map((item) => (
           <NavLink

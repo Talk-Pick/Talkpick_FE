@@ -1,3 +1,4 @@
+import ScrollToTop from "../../shared/ui/scollToTop";
 import TalkPickCard from "../../widgets/TalkPickCard";
 
 const cardData = {
@@ -8,6 +9,7 @@ const cardData = {
 const DailyTalkPick = () => {
   return (
     <div className="min-h-screen flex flex-col items-center py-8">
+      <ScrollToTop />
       <h1 className="text-2xl font-extrabold text-gray-900 mb-8">오늘의 톡픽!</h1>
       <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-4 gap-y-5 mb-10">
         {Array.from({ length: 5 }).map((_, idx) => (

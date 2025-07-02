@@ -10,6 +10,8 @@ import CategoryDetail from "../pages/random/categoryDetail";
 import Done from "../pages/random/done";
 import Result from "../pages/result";
 import DailyTalkPick from "../pages/dailyTopics";
+import SelectedTopic from "../pages/dailyTopics/selected";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -50,11 +52,11 @@ const router = createBrowserRouter([
             element: <Done />,
             handle: { title: "오늘의 톡픽" },
           },
-          // {
-          //   path: "/daily-talk-pick/:id",
-          //   element: <TopicDetail />,
-          //   handle: { title: "톡픽 상세" },
-          // },
+          {
+            path: "/daily-talk-pick/:id",
+            element: <SelectedTopic />,
+            handle: { title: "오늘의 톡픽!" },
+          },
         ],
       },
 

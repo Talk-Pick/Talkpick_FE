@@ -1,4 +1,4 @@
-import CategoryCard from "../../widgets/CategoryCard";
+import TopicCard from "../../widgets/cards/TopicCard";
 import { useNavigate, useParams } from "react-router-dom";
 
 const RandomCategory = () => {
@@ -16,14 +16,13 @@ const RandomCategory = () => {
       {
         id: 1,
         label: "소개팅/과팅",
-        cardBg: "bg-pink-50",
+        
         subject: "MBTI 과팅",
         image: "heart",
       },
       {
         id: 2,
         label: "소개팅/과팅",
-        cardBg: "bg-pink-50",
         subject: "MBTI 과팅",
         image: "heart",
       },
@@ -43,14 +42,16 @@ const RandomCategory = () => {
   ]
 
   return (
-  <div>
+  <div  className="flex flex-col">
+    <div className="flex justify-center my-8">
     <h1 className="text-2xl font-bold">{order[Number(page)]}주제</h1>
-    <div className="grid grid-cols-2 gap-5">
+    </div>
+    <div className="flex justify-center my-8 w-full">
+    <div className="grid grid-cols-2 gap-5 w-full">
       {
         data.map((item) => (
-        <CategoryCard
+        <TopicCard
           label={item.label}
-          cardBg={item.cardBg}
           subject={item.subject}
           image={item.image}
           onClick={() => {
@@ -59,6 +60,7 @@ const RandomCategory = () => {
         />
       ))
     }
+    </div>
     </div>
   </div>
   )

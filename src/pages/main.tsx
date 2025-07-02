@@ -19,16 +19,15 @@ const Main = () => {
     <main className="w-full">
     <section className="flex flex-col items-center justify-center mb-5">
       <div className="w-full flex flex-row items-center justify-between mb-5">
-      <h2 className="text-2xl font-bold">오늘의 톡픽 {5}개!</h2><span>새로고침</span>
+      <h2 className="text-2xl font-bold">오늘의 톡픽 {5}개!</h2><span className="flex items-center text-gray-600 text-sm">새로고침 <img src="/images/icons/reload.svg" alt="reload" className="w-4 h-4" /></span>
       </div>
       <Swiper
         spaceBetween={3}
         slidesPerView={1.5}
-        className="w-full max-w-[400px] overflow-visible"
-        style={{ overflow: "visible" }}
+        className="w-full overflow-visible"
       >
         {CATEGORIES.map((category, idx) => (
-          <SwiperSlide key={idx} className="flex justify-center">
+          <SwiperSlide key={idx} className="flex justify-center pb-5">
             <TopicCard
               tag={category.label}
               title={category.label}
@@ -48,7 +47,7 @@ const Main = () => {
       </div>
         <div className="bg-gray-100 w-full h-[300px] px-7 py-8 my-5"
         style={{ backgroundImage: `url(${bubble_main})`, backgroundRepeat: "no-repeat", backgroundPosition: "right bottom" }}>
-          <p className="text-xl font-bold text-gray-500 mb-3">랜덤 대화 코스로<br/> 고민 없이 대화를 시작해요</p>
+          <p className="text-xl font-bold text-gray-600 mb-3">랜덤 대화 코스로<br/> 고민 없이 대화를 시작해요</p>
           <div className="flex flex-wrap gap-3">
             {
               CATEGORIES.map((category) => (
