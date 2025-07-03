@@ -1,13 +1,10 @@
-import { Outlet, useMatches, useNavigate } from "react-router-dom";
-
+import { Outlet, useNavigate } from "react-router-dom";
+import { useRouteInfo } from "../shared/hooks";
 
 export default function NavLayout() {
-  const matches = useMatches();
-  const match = matches.find(
-    (m) => (m as { handle?: { title?: string } }).handle?.title
-  ) as { handle?: { title?: string } } | undefined;
-  const title = match?.handle?.title ?? "";
+  const { title } = useRouteInfo();
   const navigate = useNavigate();
+  
   return (
     <div>
       <nav className="flex flex-row items-center justify-between">

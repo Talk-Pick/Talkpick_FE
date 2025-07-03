@@ -29,7 +29,7 @@ export default function TopicCard({
       {description && (
         <div className="text-center text-gray-900 text-lg font-medium">{description}</div>
       )}
-      <p className="font-bold text-md">연애를 할 때 가장 중요하게 생각하는 것은?</p>
+      <p className="font-bold text-base">연애를 할 때 가장 중요하게 생각하는 것은?</p>
       <main className="flex flex-row justify-between">
       <section className="flex flex-col justify-center">
         <div className="flex flex-col">

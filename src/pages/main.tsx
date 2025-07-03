@@ -13,8 +13,8 @@ const Main = () => {
   <div className="flex flex-col h-full">
     <div className="flex flex-col items-center justify-center my-5">
       <img src={logo} alt="logo" className="w-1/2" />
-      <p className="text-md font-bold">어색한 분위기를 풀고 싶을 때</p>
-      <p className="text-md font-bold">대화가 필요할 때 톡픽!</p>
+      <p className="text-base font-bold">어색한 분위기를 풀고 싶을 때</p>
+      <p className="text-base font-bold">대화가 필요할 때 톡픽!</p>
     </div>
     <main className="w-full">
     <section className="flex flex-col items-center justify-center mb-5">

@@ -11,6 +11,8 @@ import Done from "../pages/random/done";
 import Result from "../pages/result";
 import DailyTalkPick from "../pages/dailyTopics";
 import SelectedTopic from "../pages/dailyTopics/selected";
+import Mypage from "../pages/myPage";
+import LikedTopics from "../pages/likedTopics";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,13 @@ const router = createBrowserRouter([
         path: "/main",
         index: true,
         element: <Main />,
+      },
+      {
+        path: "/liked-topics",
+        element: <LikedTopics />,
+        handle:{
+          backButton: true,
+        }
       },
       {
         element: <NavLayout />,
@@ -68,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: "daily-talk-pick",
         element: <DailyTalkPick />,
+      },
+      {
+        path:'/mypage',
+        element: <Mypage />,
       }
     ],
   },

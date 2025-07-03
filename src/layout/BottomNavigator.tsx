@@ -39,7 +39,7 @@ const navItems = [
     label: "캘린더",
   },
   {
-    to: "/mypage",
+    to: ["/mypage", "/likedTopics"],
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
         <circle cx="14" cy="10" r="5" stroke="currentColor" strokeWidth="2" />
@@ -59,8 +59,9 @@ export default function BottomNavigator() {
             key={item.to}
             to={item.to}
             className={({ isActive }) =>
-              "flex flex-col items-center flex-1 transition-colors " +
-              (isActive ? "text-gray-900 font-bold" : "text-gray-400")
+              `flex flex-col items-center flex-1 transition-colors ${
+                isActive ? "text-gray-900 font-bold" : "text-gray-400"
+              }`
             }
             end
           >
