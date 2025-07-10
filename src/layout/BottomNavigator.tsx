@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const navItems = [
   {
-    to: "/",
+    to: ["/main"],
     icon: (
       // 홈 아이콘 (활성화 시 검정, 비활성화 시 회색)
       <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
@@ -17,7 +17,7 @@ const navItems = [
     label: "홈 화면",
   },
   {
-    to: "/search",
+    to: ["/search"],
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
         <circle cx="13" cy="13" r="8" stroke="currentColor" strokeWidth="2" />
@@ -27,7 +27,7 @@ const navItems = [
     label: "검색",
   },
   {
-    to: "/calendar",
+    to: ["/calendar"],
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
         <rect x="4" y="7" width="20" height="17" rx="2" stroke="currentColor" strokeWidth="2" />
@@ -39,7 +39,7 @@ const navItems = [
     label: "캘린더",
   },
   {
-    to: ["/mypage", "/likedTopics"],
+    to: ["/mypage", "/mypage/liked-topics"],
     icon: (
       <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
         <circle cx="14" cy="10" r="5" stroke="currentColor" strokeWidth="2" />
@@ -50,15 +50,21 @@ const navItems = [
 },
 ];
 
+
+
+
 export default function BottomNavigator() {
   return (
     <nav className="fixed bottom-0 left-0 w-full bg-white shadow-[0_-2px_8px_0_rgba(0,0,0,0.04)] z-50">
       <div className="flex justify-around items-center h-[70px] max-w-md mx-auto">
-        {navItems.map((item) => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            className={({ isActive }) =>
+        {navItems.map((item) => {
+          const isActive = item.to.includes(location.pathname);
+          
+          return (
+            <NavLink
+              key={ item.to.join(",") }
+              to={ item.to[0]}
+              className={
               `flex flex-col items-center flex-1 transition-colors ${
                 isActive ? "text-gray-900 font-bold" : "text-gray-400"
               }`
@@ -70,7 +76,7 @@ export default function BottomNavigator() {
             </span>
             <span className="text-xs">{item.label}</span>
           </NavLink>
-        ))}
+        )})}
       </div>
     </nav>
   );

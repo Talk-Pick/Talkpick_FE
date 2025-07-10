@@ -57,7 +57,7 @@ const MyPage = () => {
           <div className="flex items-center py-2 gap-3">
             {/* <span className="text-2xl text-gray-600">🤍</span> */}
             <span className="text-gray-600 flex-1">좋아요 누른 대화 주제</span>
-            <Link to="/liked-topics" className="text-gray-600 text-sm">더보기 &gt;</Link>
+            <Link to="/mypage/liked-topics" className="text-gray-600 text-sm">더보기 &gt;</Link>
           </div>
         </div>
       </div>

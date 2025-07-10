@@ -13,6 +13,8 @@ import DailyTalkPick from "../pages/dailyTopics";
 import SelectedTopic from "../pages/dailyTopics/selected";
 import Mypage from "../pages/myPage";
 import LikedTopics from "../pages/likedTopics";
+import SearchPage from "../pages/search";
+import SearchResult from "../pages/search/result";
 
 const router = createBrowserRouter([
   {
@@ -32,11 +34,19 @@ const router = createBrowserRouter([
         element: <Main />,
       },
       {
-        path: "/liked-topics",
+        path: "/mypage/liked-topics",
         element: <LikedTopics />,
         handle:{
           backButton: true,
         }
+      },
+      {
+        path: "/search",
+        element: <SearchPage />,
+      },
+      {
+        path: "/search/:keyword",
+        element: <SearchResult />,
       },
       {
         element: <NavLayout />,
@@ -66,6 +76,7 @@ const router = createBrowserRouter([
             element: <SelectedTopic />,
             handle: { title: "오늘의 톡픽!" },
           },
+         
         ],
       },
 
