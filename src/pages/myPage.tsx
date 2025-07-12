@@ -9,6 +9,10 @@ const MBTI_LIST = [
   "ISTP", "ISFP", "ESTP", "ESFP"
 ];
 
+const Chevron = () => {
+  return <img src="/images/icons/chevron.svg" alt="chevron" />
+}
+
 const MyPage = () => {
   const [open, setOpen] = useState(false);
   const [selectedMbti, setSelectedMbti] = useState("INTP");
@@ -47,7 +51,7 @@ const MyPage = () => {
           </div>
         </div>
         <div className="flex justify-end mt-1">
-          <button onClick={() => setOpen(true)} className="text-gray-600 text-sm">변경하기 &gt;</button>
+          <button onClick={() => setOpen(true)} className="text-gray-600 text-sm flex items-center gap-1">변경하기<Chevron/></button>
         </div>
       </div>
 
@@ -57,7 +61,7 @@ const MyPage = () => {
           <div className="flex items-center py-2 gap-3">
             {/* <span className="text-2xl text-gray-600">🤍</span> */}
             <span className="text-gray-600 flex-1">좋아요 누른 대화 주제</span>
-            <Link to="/mypage/liked-topics" className="text-gray-600 text-sm">더보기 &gt;</Link>
+            <Link to="/mypage/liked-topics" className="text-gray-600 text-sm flex items-center gap-1">더보기<Chevron/></Link>
           </div>
         </div>
       </div>
@@ -68,12 +72,12 @@ const MyPage = () => {
           <Link to="#" className="flex items-center py-2 gap-3">
             {/* <span className="text-xl text-gray-600">🔔</span> */}
             <span className="text-gray-600 flex-1">공지사항</span>
-            <span className="text-gray-600">&gt;</span>
+            <Chevron/>
           </Link>
           <Link to="#" className="flex items-center pb-2 gap-3">
             {/* <span className="text-2xl text-gray-600">💬</span> */}
             <span className="text-gray-600 flex-1">문의</span>
-            <span className="text-gray-600">&gt;</span>
+            <Chevron/>
           </Link>
         </div>
       </div>

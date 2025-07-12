@@ -15,6 +15,7 @@ import Mypage from "../pages/myPage";
 import LikedTopics from "../pages/likedTopics";
 import SearchPage from "../pages/search";
 import SearchResult from "../pages/search/result";
+import CalendarPage from "../pages/calendar";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
         handle:{
           backButton: true,
         }
+      },
+      {
+        path: "/calendar",
+        element: <CalendarPage />,
+        handle: { title: "캘린더" },
       },
       {
         path: "/search",

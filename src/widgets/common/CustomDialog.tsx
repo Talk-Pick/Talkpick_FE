@@ -1,4 +1,5 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../../components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "../../components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 interface CustomDialogProps {
   open: boolean;
@@ -16,13 +17,18 @@ export default function CustomDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent showCloseButton={false} className="border-none flex flex-col items-center bg-white rounded-xl w-[280px]">
-        {title && (
-          <DialogHeader>
+        <DialogHeader>
+          {title ? (
             <DialogTitle className="text-center text-lg font-bold">
               {title}
             </DialogTitle>
-          </DialogHeader>
-        )}
+          ) : (
+            <DialogTitle>
+              <VisuallyHidden>Dialog</VisuallyHidden>
+            </DialogTitle>
+          )}
+        </DialogHeader>
+        <DialogDescription aria-hidden />
         {children}
         {/* <input
           className="w-full border border-gray-300 rounded-xl px-4 py-2 mt-4"

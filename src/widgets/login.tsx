@@ -1,10 +1,29 @@
 import { Button } from "../components/ui/button";
 import { useNavigate } from "react-router";
 
-const LoginSection  = () => {
+const LoginSection  = ({className}: {className?: string}) => {
   const navigate = useNavigate();
-  return <section className="w-[343px] items-start gap-3 top-[546px] left-6 flex flex-col absolute">
-  <Button className="flex h-[51px] items-center justify-center gap-2.5 px-[75px] py-[15px] relative self-stretch w-full bg-[#111111] rounded-[14px]">
+
+  const socialLogin = (social: 'kakao' | 'apple' | 'google') => {
+    switch (social) {
+      case 'kakao':
+        console.log('카카오 로그인');
+        fetch('https://kauth.kakao.com/oauth/authorize')
+        break;
+      case 'apple':
+        console.log('애플 로그인');
+        break;
+      case 'google':
+        console.log('구글 로그인');
+        break;
+    }
+  };
+
+  
+
+  return (
+  <section className={`gap-3 flex flex-col ${className}`}>
+  <Button className="flex h-12 items-center justify-center gap-2.5 px-[75px] py-[15px] relative self-stretch w-full bg-[#111111] rounded-xl">
     <img
       className="absolute w-[22px] h-[23px] left-[25px]"
       alt="Apple logo"
@@ -15,7 +34,9 @@ const LoginSection  = () => {
     </span>
   </Button>
 
-  <Button className="bg-[#fee500] flex h-[51px] items-center justify-center gap-2.5 px-[75px] py-[15px] relative self-stretch w-full rounded-[14px]">
+  <Button 
+  onClick={() => socialLogin('kakao')}
+  className="bg-[#fee500] flex h-12 items-center justify-center gap-2.5 px-[75px] py-[15px] relative self-stretch w-full rounded-xl">
     <img
       className="absolute w-[29px] h-[31px] left-[22px]"
       alt="KakaoTalk logo"
@@ -28,7 +49,7 @@ const LoginSection  = () => {
 
   <Button
     variant="outline"
-    className="border border-solid border-[#767676] flex h-[51px] items-center justify-center gap-2.5 px-[75px] py-[15px] relative self-stretch w-full rounded-[14px]"
+    className="border border-solid border-[#767676] flex h-12 items-center justify-center gap-2.5 px-[75px] py-[15px] relative self-stretch w-full rounded-xl"
     onClick={() => navigate("/main")}
   >
     <img
@@ -40,7 +61,7 @@ const LoginSection  = () => {
       이메일 로그인
     </span>
   </Button>
-</section>
+</section>)
 };
 
 export default LoginSection;
