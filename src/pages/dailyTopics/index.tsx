@@ -13,9 +13,9 @@ const DailyTalkPick = () => {
       <h1 className="text-2xl font-extrabold text-gray-900 mb-8">오늘의 톡픽!</h1>
       <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-4 gap-y-5 mb-10">
         {Array.from({ length: 5 }).map((_, idx) => (
-          <TalkPickCard key={idx} title={cardData.title} image={cardData.image} />
+          <TalkPickCard key={idx} title={cardData.title} image={cardData.image} id={idx.toString()} />
         ))}
-        <div className="text-center text-gray-400 text-sm flex items-center justify-center">마음에 드는 카드를<br/> 선택해 보세요!</div>
+        <div className="text-center text-gray-400 text-sm flex items-center justify-center">마음에 드는 카드를<br /> 선택해 보세요!</div>
       </div>
     </div>
   );

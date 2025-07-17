@@ -38,12 +38,12 @@ export default function Result() {
     );
   };
 
-  const handleAdd = () => {
-    if (input.trim() !== "") {
-      setMembersList([...membersList, input]);
-      setInput("");
-    }
-  };
+  // const handleAdd = () => {
+  //   if (input.trim() !== "") {
+  //     setMembersList([...membersList, input]);
+  //     setInput("");
+  //   }
+  // };
 
   const handleRemove = (index: number) => {
     const newMembersList = membersList.filter((_, i) => i !== index);
@@ -119,8 +119,8 @@ export default function Result() {
         step === 1
           ? "우리의 추억에 제목을 지어주세요."
           : step === 2
-          ? "기억에 남는 한줄평을 적어주세요."
-          : "함께한 사람들의 이름을 기록해주세요."
+            ? "기억에 남는 한줄평을 적어주세요."
+            : "함께한 사람들의 이름을 기록해주세요."
       }>
         {step === 1 && (
           <>
