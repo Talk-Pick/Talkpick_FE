@@ -65,10 +65,10 @@ export const CATEGORIES = [
 
 
 export const ORDER = [
-  {tag: "", tagColor: ""},
-  {tag: "첫번째", tagColor: "bg-pink-500"},
-  {tag: "두번째", tagColor: "bg-pink-500"},
-  {tag: "세번째", tagColor: "bg-pink-500"},
-  {tag: "네번째", tagColor: "bg-pink-500"},
-  {tag: "다섯번째", tagColor: "bg-pink-500"},
+  { tag: "", tagColor: "" },
+  { tag: "첫번째", tagColor: "bg-pink-500" },
+  { tag: "두번째", tagColor: "bg-pink-500" },
+  { tag: "세번째", tagColor: "bg-pink-500" },
+  { tag: "네번째", tagColor: "bg-pink-500" },
+  { tag: "다섯번째", tagColor: "bg-pink-500" },
 ];

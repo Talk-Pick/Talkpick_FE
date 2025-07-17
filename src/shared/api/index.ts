@@ -1,1 +1,8 @@
-//회사 코드보고 미들웨어 어떻게 구성했는지 확인
+const api = {
+  getDailyTopic: async () => {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/daily-topic`);
+    return response.json();
+  },
+};
+
+export default api;
