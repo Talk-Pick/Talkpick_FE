@@ -16,6 +16,7 @@ import LikedTopics from "../pages/likedTopics";
 import SearchPage from "../pages/search";
 import SearchResult from "../pages/search/result";
 import CalendarPage from "../pages/calendar";
+//TODO: 동적 라우팅 설정하기
 
 const router = createBrowserRouter([
   {
@@ -33,11 +34,12 @@ const router = createBrowserRouter([
         path: "/main",
         index: true,
         element: <Main />,
+        handle: { requiresTransition: true },
       },
       {
         path: "/mypage/liked-topics",
         element: <LikedTopics />,
-        handle:{
+        handle: {
           backButton: true,
         }
       },
@@ -82,7 +84,7 @@ const router = createBrowserRouter([
             element: <SelectedTopic />,
             handle: { title: "오늘의 톡픽!" },
           },
-         
+
         ],
       },
 
@@ -96,8 +98,9 @@ const router = createBrowserRouter([
         element: <DailyTalkPick />,
       },
       {
-        path:'/mypage',
+        path: '/mypage',
         element: <Mypage />,
+        handle: { title: "마이페이지", authRequired: true },
       }
     ],
   },
